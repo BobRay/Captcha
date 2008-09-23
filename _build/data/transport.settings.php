@@ -16,3 +16,13 @@ $settings['use_captcha']->fromArray(array (
     'namespace' => 'captcha',
     'area' => 'captcha',
 ), '', true, true);
+
+$settings['captcha_use_mathstring']= $modx->newObject('modSystemSetting');
+$settings['captcha_use_mathstring']->fromArray(array (
+    'key' => 'captcha_use_mathstring',
+    'value' => '0',
+    'xtype' => 'combo-boolean',
+    'namespace' => 'captcha',
+    'area' => 'captcha',
+), '', true, true);
+

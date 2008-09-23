@@ -17,7 +17,7 @@ $modx->setDebug(true);
 
 $name = 'captcha';
 $version = '1.0';
-$release = 'alpha';
+$release = 'beta';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
@@ -26,15 +26,16 @@ $builder->registerNamespace($name,false,true);
 
 $sources= array (
     'root' => dirname(dirname(__FILE__)) . '/',
+    'assets' => dirname(dirname(__FILE__)) . '/assets/',
 );
 
 // get the source from the actual snippet in your database OR
 // manually create the object, grabbing the source from a file
 $c= $modx->newObject('modPlugin');
 $c->set('name', 'captcha');
-$c->set('description', '<strong>1.0</strong> CAPTCHA Login Form');
+$c->set('description', '<strong>1.0-beta</strong> CAPTCHA Login Plugin');
 $c->set('category', 0);
-$c->set('snippet', file_get_contents($sources['root'] . 'plugin.captcha.php'));
+$c->set('snippet', file_get_contents($sources['assets'] . 'captcha/plugin.captcha.php'));
 
 // create a transport vehicle for the data object
 $attributes= array(
@@ -43,8 +44,8 @@ $attributes= array(
 );
 $vehicle = $builder->createVehicle($c, $attributes);
 $vehicle->resolve('file',array(
-    'source' => $sources['root'] . 'assets/captcha',
-    'target' => "return MODX_ASSETS_PATH . 'plugins/';",
+    'source' => $sources['assets'] . 'captcha',
+    'target' => "return MODX_ASSETS_PATH . 'captcha/';",
 ));
 $builder->putVehicle($vehicle);
 
