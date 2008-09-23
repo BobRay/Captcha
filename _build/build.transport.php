@@ -51,6 +51,19 @@ $builder->putVehicle($vehicle);
 // load lexicon strings
 $builder->buildLexicon($sources['root'].'_build/lexicon/');
 
+// add system settings
+$settings = array();
+include_once dirname(__FILE__).'/data/transport.settings.php';
+$attributes= array(
+    XPDO_TRANSPORT_UNIQUE_KEY => 'key',
+    XPDO_TRANSPORT_PRESERVE_KEYS => true,
+    XPDO_TRANSPORT_UPDATE_OBJECT => true,
+);
+foreach ($settings as $key => $setting) {
+    $vehicle = $builder->createVehicle($setting,$attributes);
+    $builder->putVehicle($vehicle);
+}
+
 // zip up the package
 $builder->pack();
 
