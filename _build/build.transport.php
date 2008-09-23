@@ -45,7 +45,7 @@ $attributes= array(
 $vehicle = $builder->createVehicle($c, $attributes);
 $vehicle->resolve('file',array(
     'source' => $sources['assets'] . 'captcha',
-    'target' => "return MODX_ASSETS_PATH . 'captcha/';",
+    'target' => "return MODX_ASSETS_PATH . '/';",
 ));
 $vehicle->resolve('php',array(
     'source' => dirname(__FILE__) . '/resolvers/plugin_events.php',
