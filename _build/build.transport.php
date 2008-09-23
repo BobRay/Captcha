@@ -43,7 +43,7 @@ $attributes= array(
 );
 $vehicle = $builder->createVehicle($c, $attributes);
 $vehicle->resolve('file',array(
-    'source' => $sources['root'] . 'assets/plugins/captcha',
+    'source' => $sources['root'] . 'assets/captcha',
     'target' => "return MODX_ASSETS_PATH . 'plugins/';",
 ));
 $builder->putVehicle($vehicle);
