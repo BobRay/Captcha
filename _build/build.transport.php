@@ -13,7 +13,7 @@ require_once dirname(__FILE__).'/build.config.php';
 require_once (MODX_CORE_PATH . 'model/modx/modx.class.php');
 $modx= new modX();
 $modx->initialize('mgr');
-$modx->setDebug(true);
+//$modx->setDebug(true);
 
 $name = 'captcha';
 $version = '1.0';
@@ -32,10 +32,10 @@ $sources= array (
 // get the source from the actual snippet in your database OR
 // manually create the object, grabbing the source from a file
 $c= $modx->newObject('modPlugin');
-$c->set('name', 'captcha');
+$c->set('name', 'Captcha');
 $c->set('description', '<strong>1.0-beta</strong> CAPTCHA Login Plugin');
 $c->set('category', 0);
-$c->set('snippet', file_get_contents($sources['assets'] . 'captcha/plugin.captcha.php'));
+$c->set('plugincode', file_get_contents($sources['assets'] . 'captcha/plugin.captcha.php'));
 
 // create a transport vehicle for the data object
 $attributes= array(
@@ -46,6 +46,9 @@ $vehicle = $builder->createVehicle($c, $attributes);
 $vehicle->resolve('file',array(
     'source' => $sources['assets'] . 'captcha',
     'target' => "return MODX_ASSETS_PATH . 'captcha/';",
+));
+$vehicle->resolve('php',array(
+    'source' => dirname(__FILE__) . '/resolvers/plugin_events.php',
 ));
 $builder->putVehicle($vehicle);
 
