@@ -1,6 +1,10 @@
 <?php
 /**
  * @package captcha
+ * @author Bob Ray <bobray@softville.com>
+ * @editor Shaun McCormick <shaun@collabpad.com>
+ * @created 09-23-2008
+ * @version 1.0
  */
 if (!defined('MODX_CORE_PATH')) define('MODX_CORE_PATH', dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR);
 

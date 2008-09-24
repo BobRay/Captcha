@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @package captcha
+ */
 /*  File: mathstringclass.inc.php
 
  Version: 1.0.2

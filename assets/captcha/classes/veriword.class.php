@@ -1,7 +1,6 @@
 <?php
 /**
- * @package modx
- * @subpackage assets.captcha
+ * @package captcha
  */
 
 ######

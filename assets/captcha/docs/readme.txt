@@ -1,6 +1,6 @@
 Modx Captcha Utility
 ====================
-Author: BobRay
+Author: BobRay <bobray@softville.com>
 Date:   08/10/2008
 ====================
 
@@ -36,7 +36,7 @@ OnBeforeManagerLogin shows the code which validates the user's input
 
 You can paste the code from these two plugins into two plugins of your own.
 
-On your login form, where you want the image to appear, usea snippet with this code:
+On your login form, where you want the image to appear, use a snippet with this code:
 
 $eventInfo= $modx->invokeEvent('YourImagePlugin');
 $eventInfo= is_array($eventInfo) ? implode("\n", $eventInfo) : (string) $eventInfo;

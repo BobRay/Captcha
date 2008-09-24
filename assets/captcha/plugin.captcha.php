@@ -4,8 +4,9 @@
  *
  * Events: OnBeforeManagerLogin, OnManagerLoginFormRender
  *
- * @author Bob Ray <bobray99@gmail.com>
- * @editor Shaun McCormick <splittingred@gmail.com>
+ * @package captcha
+ * @author Bob Ray <bobray@softville.com>
+ * @editor Shaun McCormick <shaun@collabpad.com>
  * @created 09/23/2008
  * @version 1.0
  */
