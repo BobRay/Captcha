@@ -16,7 +16,7 @@ $modx->initialize('mgr');
 //$modx->setDebug(true);
 
 $name = 'captcha';
-$version = '1.0';
+$version = '1.0.1';
 $release = 'beta';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);

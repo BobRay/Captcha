@@ -47,10 +47,10 @@ switch ($modx->event->name) {
 
         if (isset ($modx->config['captcha_use_mathstring']) && $modx->config['captcha_use_mathstring'] == 1) {
                $captcha_prompt = '<p>'.$modx->lexicon("login_mathstring_message").'</p>';
-               $captcha_input= '<br /><br /><label>'.$modx->lexicon("captcha_mathstring_code").': <input type="text" name="captcha_code" tabindex="3" value="" /></label>';
+               $captcha_input= '<br /><br /><label>'.$modx->lexicon("captcha_mathstring_code").': <input type="text" name="captcha_code" value="" /></label>';
            } else {
                $captcha_prompt = '<p>'.$modx->lexicon("login_captcha_message").'</p>';
-               $captcha_input= '<br /><br /><label>'.$modx->lexicon("captcha_code").': <input type="text" name="captcha_code" tabindex="3" value="" /></label>';
+               $captcha_input= '<br /><br /><label>'.$modx->lexicon("captcha_code").': <input type="text" name="captcha_code" value="" /></label>';
            }
 
            $rt = '<hr />'.$captcha_prompt.$captcha_image.$captcha_input;
