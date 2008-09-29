@@ -16,7 +16,7 @@ $modx->initialize('mgr');
 //$modx->setDebug(true);
 
 $name = 'captcha';
-$version = '1.0.1';
+$version = '3.0.1';
 $release = 'beta';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
@@ -33,7 +33,7 @@ $sources= array (
 // manually create the object, grabbing the source from a file
 $c= $modx->newObject('modPlugin');
 $c->set('name', 'Captcha');
-$c->set('description', '<strong>1.0-beta</strong> CAPTCHA Login Plugin');
+$c->set('description', '<strong>3.0.1-beta</strong> CAPTCHA Login Plugin');
 $c->set('category', 0);
 $c->set('plugincode', file_get_contents($sources['assets'] . 'captcha/plugin.captcha.php'));
 
