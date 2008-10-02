@@ -31,7 +31,7 @@ $release = 'beta';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
-$builder->create($name, $version, $release);
+$builder->createPackage($name, $version, $release);
 $builder->registerNamespace($name,false,true);
 
 
