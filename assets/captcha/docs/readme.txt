@@ -51,7 +51,7 @@ $rt = $modx->invokeEvent('YourCaptchaVerificationPlugin');
 if (is_array($rt)) {
     foreach ($rt as $key=>$value) {   //php4 compatible
         if ($value !== true) {
-            $error->failure($value);  // or use sendRedirect to send the user to an error page
+            $modx->error->failure($value);  // or use sendRedirect to send the user to an error page
         }
     }
     unset($key,$value);
