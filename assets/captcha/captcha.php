@@ -20,12 +20,32 @@ require_once dirname(__FILE__).'/classes/veriword.class.php';
 
 $modx->lexicon->load('captcha:default');
 
-$useMathstring = $modx->getObject('modSystemSetting','captcha_use_mathstring');
+/* let the caller override the default height and width with session variables */
 
-if ($useMathstring !== null && ($useMathstring->value == 1 || $useMathstring->value == '1' || $useMathstring->value == 'Yes')) {
-    $vword = new VeriWord($modx,200,80, "MathString");
+$height = isset($_SESSION['captcha_height'])? $_SESSION['captcha_height'] : 80;
+$width = isset($_SESSION['captcha_width'])? $_SESSION['captcha_width'] : 200;
+
+/* If the caller has set the captcha_use_mathstring variable, use it;
+ * otherwise, use the System Setting
+ */
+
+$useMathstring = false;
+
+
+if (isset($_SESSION['captcha_use_mathstring'])) {
+    if ($_SESSION['captcha_use_mathstring'] == 'true' || $_SESSION['captcha_use_mathstring'] == true)  {
+        $useMathString = true;
+    } else {
+        $useMathString = false;
+    }
 } else {
-    $vword = new VeriWord($modx,200,80);
+    $useMathString = $modx->config['captcha_use_mathstring'];
+}
+
+if ($useMathString) {
+    $vword = new VeriWord($modx,$width,$height, "MathString");
+} else {
+    $vword = new VeriWord($modx,$width,$height);
 }
 $vword->output_image();
 $vword->destroy_image();
