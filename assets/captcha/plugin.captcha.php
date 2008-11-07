@@ -43,7 +43,7 @@ switch ($modx->event->name) {
                $alt = $modx->lexicon("login_captcha_message");
            }
 
-           $captcha_image= '<a href="'.$_SERVER['PHP_SELF'].'" class="loginCaptcha"><img src="'.$modx->config['site_url'].'assets/captcha/captcha.php?rand='.rand().'" alt="'.$alt.'" /></a>';
+           $captcha_image= '<a href="'.$_SERVER['PHP_SELF'].'" class="loginCaptcha"><img src="'.$modx->config['site_url'].'assets/components/captcha/captcha.php?rand='.rand().'" alt="'.$alt.'" /></a>';
 
         if (isset ($modx->config['captcha_use_mathstring']) && $modx->config['captcha_use_mathstring'] == 1) {
                $captcha_prompt = '<p>'.$modx->lexicon("login_mathstring_message").'</p>';
