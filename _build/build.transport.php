@@ -1,4 +1,11 @@
 <?php
+/**
+ * Captcha build script
+ *
+ * @author bobray <bobray@softville.com>
+ * @package captcha
+ * @subpackage build
+ */
 $mtime = microtime();
 $mtime = explode(" ", $mtime);
 $mtime = $mtime[1] + $mtime[0];
@@ -69,7 +76,7 @@ $builder->buildLexicon($sources['lexicon']);
 $settings = array();
 include_once $sources['data'] . 'transport.settings.php';
 $attributes= array(
-    XPDO_TRANSPORT_UNIQUE_KEY => array('key','namespace'),
+    XPDO_TRANSPORT_UNIQUE_KEY => 'key',
     XPDO_TRANSPORT_PRESERVE_KEYS => true,
     XPDO_TRANSPORT_UPDATE_OBJECT => false, /* dont update the setting, leave to user-defined values */
 );

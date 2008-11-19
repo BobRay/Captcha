@@ -6,7 +6,7 @@
  * @created 09-23-2008
  * @version 1.0
  */
-if (!defined('MODX_CORE_PATH')) define('MODX_CORE_PATH', dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR);
+if (!defined('MODX_CORE_PATH')) define('MODX_CORE_PATH', dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR);
 
 // include the modX class
 if (!require_once (MODX_CORE_PATH . "model/modx/modx.class.php")) {
