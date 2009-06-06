@@ -13,10 +13,10 @@ use_captcha                If set, the captcha function is turned on
 captcha_use_mathstring     If set, the image is a simple equation for the user to solve 
 captcha_words              Selection of words used for the image if captcha_use_mathstring is off
 
-You may add or delete fonts from the assets/captcha/fonts directory 
+You may add or delete fonts from the core/components/captcha/fonts directory 
 as long as there is at least one .ttf file there.
 
-You may add or delete images from the assets/captcha/noise directory 
+You may add or delete images from the core/components/captcha/noise directory 
 as long as there is at least one file there.
 
 Captcha can also be used in other forms that require captcha.
@@ -29,7 +29,7 @@ and then comparing the user's input to the $_SESSION['veriword'] variable.
 You can also use the code in plugins.
 
 To do so, look at the code in the two plugins 
-(in the assets/captcha/plugins directory):
+(in the core/components/captcha/ directory):
 
 OnManagerLoginFormPrerender shows the code which displays the image
 OnBeforeManagerLogin shows the code which validates the user's input

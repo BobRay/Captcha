@@ -15,12 +15,13 @@ set_time_limit(0);
 $root = dirname(dirname(__FILE__)) . '/';
 $sources= array (
     'root' => $root,
-    'assets' => $root . 'assets/',
     'build' => $root . '_build/',
-    'lexicon' => $root . '_build/lexicon/',
     'data' => $root . '_build/data/',
     'resolvers' => $root . '_build/resolvers/',
-    'docs' => $root . 'assets/captcha/docs/',
+    'lexicon' => $root . 'core/components/captcha/lexicon/',
+    'docs' => $root . 'core/components/captcha/docs/',
+    'source_assets' => $root . 'assets/components/captcha',
+    'source_core' => $root . 'core/components/captcha',
 );
 
 /* override with your own defines here (see build.config.sample.php) */
@@ -34,8 +35,8 @@ $modx->setLogLevel(MODX_LOG_LEVEL_INFO);
 $modx->setLogTarget('ECHO');
 
 $name = 'captcha';
-$version = '3.0.2';
-$release = 'beta';
+$version = '3.0.3';
+$release = 'beta1';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
@@ -49,9 +50,9 @@ $builder->registerNamespace($name,false,true);
 $c= $modx->newObject('modPlugin');
 $c->set('id',1);
 $c->set('name', 'Captcha');
-$c->set('description', '<strong>3.0.2-beta</strong> CAPTCHA Login Plugin');
+$c->set('description', '<b>3.0.3-beta1</b> CAPTCHA Login Plugin');
 $c->set('category', 0);
-$c->set('plugincode', file_get_contents($sources['assets'] . 'captcha/plugin.captcha.php'));
+$c->set('plugincode', file_get_contents($sources['source_core'] . '/plugin.captcha.php'));
 
 /* create a transport vehicle for the data object */
 $attributes= array(
@@ -61,8 +62,12 @@ $attributes= array(
 );
 $vehicle = $builder->createVehicle($c, $attributes);
 $vehicle->resolve('file',array(
-    'source' => $sources['assets'] . 'captcha',
+    'source' => $sources['source_assets'],
     'target' => "return MODX_ASSETS_PATH . '/components/';",
+));
+$vehicle->resolve('file',array(
+    'source' => $sources['source_core'],
+    'target' => "return MODX_CORE_PATH . '/components/';",
 ));
 $vehicle->resolve('php',array(
     'source' => $sources['resolvers'] . 'plugin_events.php',

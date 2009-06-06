@@ -44,17 +44,20 @@ class VeriWord {
 	var $im_height 	= 0;
 	var $modx;
 
-	function VeriWord(&$modx, $w=200, $h=80, $word = "") {
-		$this->modx = $modx;
-
-        $this->base_path = dirname(dirname(__FILE__)).'/';
-        $this->dir_font = $this->base_path.'fonts';
-		$this->dir_noise = $this->base_path.'noise';
-        $this->dir_mathstring = $this->base_path.'classes';
-		$this->set_veriword($word);
-		$this->im_width 		= $w;
-		$this->im_height 		= $h;
+	function VeriWord(&$modx, $w=200, $h=80, $word='') {
+        $this->__construct($modx,$w,$h,$word);
 	}
+    function __construct(&$modx,$w=200,$h=80,$word='') {
+        $this->modx =& $modx;
+
+        $this->base_path = dirname(dirname(dirname(__FILE__))).'/';
+        $this->dir_font = $this->base_path.'fonts';
+        $this->dir_noise = $this->base_path.'noise';
+        $this->dir_mathstring = $this->base_path.'model/captcha/';
+        $this->set_veriword($word);
+        $this->im_width         = $w;
+        $this->im_height        = $h;
+    }
 
 	function set_veriword($word = "") {
 		/* create session variable for verification,
