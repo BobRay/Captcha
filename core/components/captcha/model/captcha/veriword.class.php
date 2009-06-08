@@ -91,12 +91,10 @@ class VeriWord {
 
 	function pick_word() {
 		// set default words
-/* remove this Ack,Arps,Alag,Atex,Bek,Bux,Chux,Caxt,Depp,Dex,Ext,Enya,Fet,Fets,Tek,Toxt,Gurk,Gex,Het,Heft,Unet,Ibex,Jax,Jerp,Jenk,Lak,Lest,Lev,Mars,Mamp,Nex,Nelp,Paxt,Pex,Reks,Rux,Snux,Sept,Turp,Thex,Erps,Vux,Veks,Wect,Wex,Yap,Yef,Yeff,Zub,Zeks  */
-
 
 		$words="MODx,Access,Better,BitCode,Chunk,Cache,Desc,Design,Excell,Enjoy,URLs,TechView,Gerald,Griff,Humphrey,Holiday,Intel,Integration,Joystick,Join(),Oscope,Genetic,Light,Likeness,Marit,Maaike,Niche,Netherlands,Ordinance,Oscillo,Parser,Phusion,Query,Question,Regalia,Righteous,Snippet,Sentinel,Template,Thespian,Unity,Enterprise,Verily,Veri,Website,WideWeb,Yap,Yellow,Zebra,Zygote";
 		// get words from database
-		$wordSettings = $this->modx->getObject('modSystemSetting',array('key' => 'captcha_words'));
+		$wordSettings = $this->modx->getObject('modSystemSetting',array('key' => 'captcha.words'));
 
 		if (strlen($wordSettings->value) > 0) $words = $wordSettings->value;
 		$arr_words = explode(",", $words);
