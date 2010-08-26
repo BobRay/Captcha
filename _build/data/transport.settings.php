@@ -17,7 +17,7 @@ $settings['captcha.words']->fromArray(array (
 $settings['captcha.enabled']= $modx->newObject('modSystemSetting');
 $settings['captcha.enabled']->fromArray(array (
     'key' => 'captcha.enabled',
-    'value' => '1',
+    'value' => '0',
     'xtype' => 'combo-boolean',
     'namespace' => 'captcha',
     'area' => 'captcha',
@@ -26,7 +26,7 @@ $settings['captcha.enabled']->fromArray(array (
 $settings['captcha.use_mathstring']= $modx->newObject('modSystemSetting');
 $settings['captcha.use_mathstring']->fromArray(array (
     'key' => 'captcha.use_mathstring',
-    'value' => '0',
+    'value' => '1',
     'xtype' => 'combo-boolean',
     'namespace' => 'captcha',
     'area' => 'captcha',

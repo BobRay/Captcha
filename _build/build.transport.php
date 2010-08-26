@@ -34,7 +34,7 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget('ECHO');
 
 $name = 'captcha';
-$version = '3.1.0';
+$version = '3.2.0';
 $release = 'beta1';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
@@ -49,7 +49,7 @@ $builder->registerNamespace($name,false,true);
 $c= $modx->newObject('modPlugin');
 $c->set('id',1);
 $c->set('name', 'Captcha');
-$c->set('description', '<b>3.1.0-beta1</b> CAPTCHA Login Plugin');
+$c->set('description', '<b>3.2.0-beta1</b> CAPTCHA Login Plugin');
 $c->set('category', 0);
 $c->set('plugincode', file_get_contents($sources['source_core'] . '/plugin.captcha.php'));
 
@@ -82,6 +82,12 @@ $attributes= array(
 $modx->log(xPDO::LOG_LEVEL_INFO,'Package Attributes Set...'); flush();
 $modx->log(xPDO::LOG_LEVEL_INFO,'Creating Vehicle...'); flush();
 $vehicle = $builder->createVehicle($c, $attributes);
+
+$vehicle->validate('php',array(
+    'type' => 'php',
+    'source' => $sources['build'] . 'preinstall-script.php'
+));
+
 $vehicle->resolve('file',array(
     'source' => $sources['source_assets'],
     'target' => "return MODX_ASSETS_PATH . '/components/';",
