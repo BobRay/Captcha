@@ -11,35 +11,35 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
 
         $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'Checking for GD and FreeType: ');
-
+        $success = true;
         /* Check for GD library */
         if (function_exists('imagegd2')) {
             $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'GD lib found');
         } else {
             $object->xpdo->log(xPDO::LOG_LEVEL_ERROR,'GD lib not found -- install canceled');
-            $success =  false;
-            break;
+            return false;
         }
         /* GD is ok, check for necessary functions */
 
-        $fs = array('imagettfbbox', 'ximagecreate', 'imagecolorallocate', 'imagettftext',
+        $fs = array('imagettfbbox', 'imagecreate', 'imagecolorallocate', 'imagettftext',
         'imagecolortransparent', 'imagedestroy', 'imagecreatefromjpeg', 'imagesx',
         'imagesy', 'imagecreatetruecolor', 'imagecopyresampled', 'imagecopymerge'
         );
         $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'Checking for necessary functions');
 
-        $success = true;
+
         foreach($fs as $f) {
             $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'Checking for ' . $f . ' function: ');
             if (function_exists($f)) {
                 $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'OK');
             } else {
                 $object->xpdo->log(xPDO::LOG_LEVEL_ERROR,'Not found');
-                $success = false;
+                $success =  false;
             }
         }
         if ($success == false) {
             $object->xpdo->log(xPDO::LOG_LEVEL_ERROR,'Configuration problem - install canceled');
+            return false;
         } else {
             $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'No Problems -- installing CAPTCHA plugin');
         }
