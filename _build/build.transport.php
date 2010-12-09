@@ -34,13 +34,13 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget('ECHO');
 
 $name = 'captcha';
-$version = '3.2.0';
+$version = '3.2.1';
 $release = 'beta1';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
 $builder->createPackage($name, $version, $release);
-$builder->registerNamespace($name,false,true);
+$builder->registerNamespace($name,false,true,'{core_path}components/' . $name. '/');
 
 
 /* get the source from the actual snippet in your database OR
@@ -49,7 +49,7 @@ $builder->registerNamespace($name,false,true);
 $c= $modx->newObject('modPlugin');
 $c->set('id',1);
 $c->set('name', 'Captcha');
-$c->set('description', '<b>3.2.0-beta1</b> CAPTCHA Login Plugin');
+$c->set('description', '<b>3.2.1-beta1</b> CAPTCHA Login Plugin');
 $c->set('category', 0);
 $c->set('plugincode', file_get_contents($sources['source_core'] . '/plugin.captcha.php'));
 

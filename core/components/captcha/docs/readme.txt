@@ -2,7 +2,7 @@ Modx Captcha Utility
 ====================
 Author: BobRay <bobray@softville.com>
 Date:   08/10/2008
-Updated:08/25/2010
+Updated:10/03/2010
 ====================
 
 This utility provides captcha verification in the MODx
@@ -15,6 +15,7 @@ captcha.use_mathstring     If set, the image is a simple equation for the user t
 captcha.words              Selection of words used for the image if captcha_use_mathstring is off
 captcha.height             Height of image (default: 80)
 captcha.width              Width of image (default: 200)
+captcha.words              Words to use in CAPTCHA challenge
 
 You may add or delete fonts from the core/components/captcha/fonts directory
 as long as there is at least one .ttf file there.

@@ -34,7 +34,7 @@ $useMathstring = false;
 
 
 if (isset($_SESSION['captcha.use_mathstring'])) {
-    if ($_SESSION['captcha.use_mathstring'] == 'true' || $_SESSION['captcha.use_mathstring'] == true)  {
+    if ($_SESSION['captcha.use_mathstring'] == 'true')  {
         $useMathString = true;
     } else {
         $useMathString = false;
