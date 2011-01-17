@@ -7,7 +7,26 @@ Captcha 3.2.2
  - Reorganized for Git
  - Revolution Transport Package updated
  - Converted tabs to spaces
+
 Captcha 3.2.1
- - first Revolution release
+ - Test for Necessary GD and FreeType functions on install
+
+
+Captcha 3.1.0
+ - Updated for Revolution RC3
+ - Fixed bug with captcha words
+ - Converted $modx->config calls to getOption()
+
+Captcha 3.0.3
+ - Fixed bugs in build script
+ - Moved target directory
+ - Added license and readme
+
+ Captcha 3.0.2
+ - $_SESSION mathstring value can override system setting
+ - Updates to build script
+
+ Captcha 3.0.1
+ - First Revolution release
 
 
