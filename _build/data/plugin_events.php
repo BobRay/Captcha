@@ -1,8 +1,9 @@
 <?php
 /**
- * Code for handling addition of plugin events
+ * Array of plugin events for Captcha package
  *
  * @package captcha
+ * @subpackage build
  */
 $events = array();
 

@@ -1,19 +1,51 @@
 <?php
 /**
- * @package captcha
- * @author Bob Ray <bobray@softville.com>
+ * Captcha
+ *
+ * Copyright 2011 Bob Ray
+ *
+ * @author Bob Ray
  * @editor Shaun McCormick <shaun@collabpad.com>
  * @created 09-23-2008
- * @version 1.0
+ * @version 3.2.2
+ * 1/17/11
+ *
+ * Captcha is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option) any
+ * later version.
+ *
+ * Captcha is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * Captcha; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
+ *
+ * @package captcha
  */
+/**
+ * MODx Captcha code - produces Captcha image
+ *
+ * Description Presents Captcha-style image for login verification
+  *
+ * @package captcha
+ *
+ * Properties passed in $_SESSION variables
+ * @property captcha.use_mathstring - create math equation
+ * @property captcha.height - height of captcha image
+ * @property captcha.width - width of captcha image
+ *
+
+ */
+
 $captcha_assets_path = dirname(__FILE__).'/';
 include dirname(dirname(dirname($captcha_assets_path))).'/config.core.php';
 $captcha_core_path = MODX_CORE_PATH.'components/captcha/';
 
 /* include the modX class */
-if (!require_once (MODX_CORE_PATH . "model/modx/modx.class.php")) {
-  die("Can't find MODx class file");
-}
+require_once MODX_CORE_PATH . "model/modx/modx.class.php";
 
 $modx= new modX();
 $modx->initialize('web');

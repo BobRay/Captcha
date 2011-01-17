@@ -1,11 +1,33 @@
 <?php
 /**
- * Captcha build script
+ * Captcha
  *
- * @author bobray <bobray@softville.com>
+ * Copyright 2011 Bob Ray
+ * @author Bob Ray <http://bobsguides.com>
+ * 1/17/11
+ *
+ * Captcha is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option) any
+ * later version.
+ *
+ * Captcha is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * Captcha; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
+ *
+ * @package captcha
+ */
+/**
+ * Description: Build script for Captcha package
  * @package captcha
  * @subpackage build
  */
+
+
 $mtime = microtime();
 $mtime = explode(" ", $mtime);
 $mtime = $mtime[1] + $mtime[0];
@@ -34,7 +56,7 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget('ECHO');
 
 $name = 'captcha';
-$version = '3.2.1';
+$version = '3.2.2';
 $release = 'beta1';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
@@ -106,7 +128,7 @@ include_once $sources['data'] . 'transport.settings.php';
 $attributes= array(
     xPDOTransport::UNIQUE_KEY => 'key',
     xPDOTransport::PRESERVE_KEYS => true,
-    xPDOTransport::UPDATE_OBJECT => false, /* dont update the setting, leave to user-defined values */
+    xPDOTransport::UPDATE_OBJECT => false, /* don't update the setting, leave to user-defined values */
 );
 foreach ($settings as $key => $setting) {
     $vehicle = $builder->createVehicle($setting,$attributes);

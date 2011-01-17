@@ -1,5 +1,5 @@
 <?php
-/**
+/** Array of system settings for Captcha package
  * @package captcha
  * @subpackage build
  */

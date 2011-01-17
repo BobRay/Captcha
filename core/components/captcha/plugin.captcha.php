@@ -1,15 +1,42 @@
 <?php
 /**
- * Captcha Plugin
+ * Captcha plugin
  *
+ * Copyright 2011 Bob Ray
+ *
+ * @author Bob Ray
+ * @editor Shaun McCormick <shaun@collabpad.com>
+ * @created 09/23/2008
+ * @version 3.2.2
+ * 1/17/11
+ *
+ * Captcha is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option) any
+ * later version.
+ *
+ * Captcha is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * Captcha; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
+ *
+ * @package captcha
+ */
+
+/**
+ * MODx Captcha plugin
+ *
+ * Description: Captcha plugin for MODx login verification
  * Events: OnBeforeManagerLogin, OnManagerLoginFormRender
  *
  * @package captcha
- * @author Bob Ray <bobray@softville.com>
- * @editor Shaun McCormick <shaun@collabpad.com>
- * @created 09/23/2008
- * @version 1.0
+ *
+ * @property
  */
+
 switch ($modx->event->name) {
     case 'OnBeforeManagerLogin': /* register only for backend */
         $rt = true;
