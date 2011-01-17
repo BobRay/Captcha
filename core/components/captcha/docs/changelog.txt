@@ -1,0 +1,13 @@
+Changelog for Captcha.
+
+Captcha 3.2.2
+ - Updated PhpDoc comments
+ - Added changelog.txt
+ - Added readme.md
+ - Reorganized for Git
+ - Revolution Transport Package updated
+ - Converted tabs to spaces
+Captcha 3.2.1
+ - first Revolution release
+
+
