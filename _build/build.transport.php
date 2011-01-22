@@ -79,7 +79,7 @@ $c->set('plugincode', file_get_contents($sources['source_core'] . '/plugin.captc
 
 /* add plugin events */
 $modx->log(xPDO::LOG_LEVEL_INFO,'Packaging in Plugin Events...'); flush();
-$events = include $sources['data'].'plugin_events.php';
+$events = include $sources['data'].'plugin.events.php';
 if (is_array($events) && !empty($events)) {
 $c->addMany($events);
 } else {
@@ -107,7 +107,7 @@ $vehicle = $builder->createVehicle($c, $attributes);
 
 $vehicle->validate('php',array(
     'type' => 'php',
-    'source' => $sources['build'] . 'preinstall-script.php'
+    'source' => $sources['build'] . 'preinstall.script.php'
 ));
 
 $vehicle->resolve('file',array(
