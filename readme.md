@@ -2,7 +2,7 @@ Captcha Plugin for MODx Revolution
 =======================================
 
 **Revolution Author:** Bob Ray [Bob's Guides](http://bobsguides.com)
-**Revoluion Editor:** Shaun McCormick
+**Revolution Editor:** Shaun McCormick
 **Date:**   01/10/2011
 
 **Documentation:** See comments in files at:
