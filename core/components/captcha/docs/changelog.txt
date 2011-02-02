@@ -1,5 +1,8 @@
 Changelog for Captcha.
 
+Captcha 3.2.3
+ - Fixed bug in Transport Package
+
 Captcha 3.2.2
  - Updated PhpDoc comments
  - Added changelog.txt

@@ -7,7 +7,7 @@
  * @author Bob Ray
  * @editor Shaun McCormick <shaun@collabpad.com>
  * @created 09-23-2008
- * @version 3.2.2
+ * @version 3.2.3
  * 1/17/11
  *
  * Captcha is free software; you can redistribute it and/or modify it
