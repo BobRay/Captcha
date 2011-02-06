@@ -56,7 +56,7 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget('ECHO');
 
 $name = 'captcha';
-$version = '3.2.3';
+$version = '3.2.4';
 $release = 'beta1';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
@@ -71,7 +71,7 @@ $builder->registerNamespace($name,false,true,'{core_path}components/' . $name. '
 $c= $modx->newObject('modPlugin');
 $c->set('id',1);
 $c->set('name', 'Captcha');
-$c->set('description', '<b>3.2.3-beta1</b> CAPTCHA Login Plugin');
+$c->set('description', '<b>3.2.4-beta1</b> CAPTCHA Login Plugin');
 $c->set('category', 0);
 $c->set('plugincode', file_get_contents($sources['source_core'] . '/plugin.captcha.php'));
 
@@ -89,6 +89,7 @@ $modx->log(xPDO::LOG_LEVEL_INFO,'Plugin Events Packaged...'); flush();
 
 $modx->log(xPDO::LOG_LEVEL_INFO,'Setting Package Attributes...'); flush();
 $attributes= array(
+    xPDOTransport::ABORT_INSTALL_ON_VEHICLE_FAIL => true,
     xPDOTransport::UNIQUE_KEY => 'name',
     xPDOTransport::PRESERVE_KEYS => false,
     xPDOTransport::UPDATE_OBJECT => true,
@@ -141,6 +142,7 @@ $builder->setPackageAttributes(array(
     'readme' => file_get_contents($sources['docs'] . 'readme.txt'),
     'changelog' => file_get_contents($sources['docs'] . 'changelog.txt'),
     'setup-options' => '',
+
 ));
 
 /* zip up the package */

@@ -1,5 +1,8 @@
 Changelog for Captcha.
 
+Captcha 3.2.4
+ - Fixed bug with failed validator
+
 Captcha 3.2.3
  - Fixed bug in Transport Package
 
