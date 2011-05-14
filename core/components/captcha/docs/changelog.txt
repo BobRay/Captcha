@@ -1,12 +1,19 @@
 Changelog for Captcha.
 
+Captcha 3.2.5
+-------------
+Added Spanish language files
+
 Captcha 3.2.4
+-------------
  - Fixed bug with failed validator
 
 Captcha 3.2.3
+-------------
  - Fixed bug in Transport Package
 
 Captcha 3.2.2
+-------------
  - Updated PhpDoc comments
  - Added changelog.txt
  - Added readme.md
@@ -15,24 +22,28 @@ Captcha 3.2.2
  - Converted tabs to spaces
 
 Captcha 3.2.1
+-------------
  - Test for Necessary GD and FreeType functions on install
 
-
 Captcha 3.1.0
+-------------
  - Updated for Revolution RC3
  - Fixed bug with captcha words
  - Converted $modx->config calls to getOption()
 
 Captcha 3.0.3
+-------------
  - Fixed bugs in build script
  - Moved target directory
  - Added license and readme
 
  Captcha 3.0.2
+ -------------
  - $_SESSION mathstring value can override system setting
  - Updates to build script
 
  Captcha 3.0.1
+ -------------
  - First Revolution release
 
 
