@@ -82,4 +82,5 @@ if ($useMathString) {
 }
 $vword->output_image();
 $vword->destroy_image();
+session_write_close();
 exit();
