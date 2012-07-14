@@ -2,13 +2,12 @@
 /**
  * Captcha
  *
- * Copyright 2011 Bob Ray
+ * Copyright 2011,2012 Bob Ray
  *
  * @author Bob Ray
  * @editor Shaun McCormick <shaun@collabpad.com>
  * @created 09-23-2008
- * @version 3.2.4
- * 1/17/11
+
  *
  * Captcha is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
