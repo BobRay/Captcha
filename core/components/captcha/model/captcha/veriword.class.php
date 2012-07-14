@@ -152,7 +152,7 @@ class VeriWord {
 
         /* dynamically load GD2 lib -- (dll() is deprecated, but it will only
         execute here under Windows)*/
-        
+
         /* no longer necessary since validator checks this during install */
 
         /*if (!extension_loaded('gd')) {

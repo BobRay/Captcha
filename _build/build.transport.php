@@ -34,6 +34,12 @@ $mtime = $mtime[1] + $mtime[0];
 $tstart = $mtime;
 /* get rid of time limit */
 set_time_limit(0);
+
+define('MODX_BASE_URL','http://localhost/addons/');
+define('MODX_MANAGER_URL','http://localhost/addons/manager/');
+define('MODX_ASSETS_URL','http://localhost/addons/assets/');
+define('MODX_CONNECTORS_URL','http://localhost/addons/connectors/');
+
 $root = dirname(dirname(__FILE__)) . '/';
 $sources= array (
     'root' => $root,
@@ -156,6 +162,6 @@ $tend= $mtime;
 $totalTime= ($tend - $tstart);
 $totalTime= sprintf("%2.4f s", $totalTime);
 
-$modx->log(modX::LOG_LEVEL_INFO,"\n<br />Package Built.<br />\nExecution time: {$totalTime}\n");
+$modx->log(modX::LOG_LEVEL_INFO,"Package Built.\nExecution time: {$totalTime}");
 
 exit ();
