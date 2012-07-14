@@ -3,7 +3,7 @@ Changelog for Captcha.
 Captcha 3.3.0-pl
 ----------------
 Fixed bug with session var not being written
-(fixes intermittent Captcha failure)
+(fixes intermittent Captcha failure - Thanks to Garry Nutting!)
 Added German Lexicon files
 Minor bug fixes
 
