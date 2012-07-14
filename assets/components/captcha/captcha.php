@@ -33,9 +33,9 @@
  * @package captcha
  *
  * Properties passed in $_SESSION variables
- * @property captcha.use_mathstring - create math equation
- * @property captcha.height - height of captcha image
- * @property captcha.width - width of captcha image
+ * @property $captcha.use_mathstring boolean - create math equation
+ * @property $captcha.height string - string height of captcha image
+ * @property $captcha.width string - width of captcha image
  *
 
  */
@@ -82,4 +82,5 @@ if ($useMathString) {
 }
 $vword->output_image();
 $vword->destroy_image();
+session_write_close();
 exit();
