@@ -36,7 +36,7 @@
  *
  * @property
  */
-
+/* @var $modx modX */
 switch ($modx->event->name) {
     case 'OnBeforeManagerLogin': /* register only for backend */
         $rt = true;

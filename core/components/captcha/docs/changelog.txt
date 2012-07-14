@@ -1,5 +1,10 @@
 Changelog for Captcha.
 
+Captcha 3.3.0-pl
+----------------
+Fixed bug with session var no being written
+Added German Lexicon files
+
 Captcha 3.2.5
 -------------
 Added Spanish language files

@@ -40,32 +40,32 @@
 class VeriWord {
 
     /**
-     * @var String Path to font directory
+     * @var $dir_font - String Path to font directory
      */
     var $dir_font;
     /**
-     * @var String Path to background image directory
+     * @var $dir_noise - string Path to background image directory
      */
     var $dir_noise;
     /**
-     * @var Image itself
+     * @var $im resource - Image itself
      */
     var $im;
     /**
-     * @var String Optional string to make an image from
+     * @var $word string Optional string to make an image from
      */
     var $word = "";
     /**
-     * @var int Image width
+     * @var $im_width - int Image width
      */
 
     var $im_width = 0;
     /**
-     * @var int Image height
+     * @var $im_height - int Image height
      */
     var $im_height = 0;
     /**
-     * @var modx Modx object reference
+     * @var $modx Modx object reference
      */
     var $modx;
 
@@ -150,7 +150,8 @@ class VeriWord {
      */
     function draw_text() {
 
-        /* dynamically load GD2 lib */
+        /* dynamically load GD2 lib (dll() is deprecated, but it will only
+        execute here under Windows)*/
         if (!extension_loaded('gd')) {
            if (strtoupper(substr(PHP_OS, 0,3) == 'WIN')) {
                 @dl('php_gd2.dll');
@@ -216,7 +217,7 @@ class VeriWord {
         return $im_text;
     }
     /** Combine image and background
-     * @return Image - full image
+     * @return resource - full image
      */
     function draw_image() {
 

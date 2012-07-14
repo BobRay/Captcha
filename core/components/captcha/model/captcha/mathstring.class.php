@@ -97,25 +97,28 @@
          * @return int solution to equation
          */
         function getValue() { // returns the solution as an integer
+            $value = null;
             $ds = $this->_displayString;
             $v1 = intval(substr($ds, 0, 1));
             $v2 = intval(substr($ds, 4, 1));
             $op = substr($ds, 2, 1);
             switch ($op) {
                 case "+":
-                    return ($v1 + $v2);
+                    $value =  ($v1 + $v2);
 
                     break;
                 case "-":
-                    return ($v1 - $v2);
+                    $value =  ($v1 - $v2);
 
                     break;
                 case "x":
-                    return ($v1 * $v2);
+                    $value =  ($v1 * $v2);
 
                     break;
             }
+            return $value;
 
         }
+
   }
-?>
+
