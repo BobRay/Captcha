@@ -3,6 +3,8 @@
  * @package captcha
  * @subpackage build
  */
+
+/* @var $modx modX */
 $settings = array();
 
 $settings['captcha.words']= $modx->newObject('modSystemSetting');

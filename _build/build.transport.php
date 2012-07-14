@@ -68,6 +68,7 @@ $builder->registerNamespace($name,false,true,'{core_path}components/' . $name. '
 /* get the source from the actual snippet in your database OR
 /* manually create the object, grabbing the source from a file
  */
+/* @var $c modPlugin */
 $c= $modx->newObject('modPlugin');
 $c->set('id',1);
 $c->set('name', 'Captcha');

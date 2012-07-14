@@ -28,20 +28,22 @@
  */
 /**
  * @package captcha
- * Validator -- checks for GD and FreeType
+ * Validator -- checks for GD and FreeType - only on first install
  */
-/* $oldLogLevel = $object->xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
-$oldLogTarget = $object->xpdo->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');  */
 
+/* @var $object modTransportPackage */
+/* @var $options array */
 $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'Running PHP Validator.');
+$success = false;
 switch($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
 
         $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'Checking for GD and FreeType: ');
-        $success = true;
+
         /* Check for GD library */
         if (function_exists('imagegd2')) {
             $object->xpdo->log(xPDO::LOG_LEVEL_INFO,'GD lib found');
+            $success = true;
         } else {
             $object->xpdo->log(xPDO::LOG_LEVEL_ERROR,'GD lib not found -- install canceled');
             return false;
@@ -81,7 +83,6 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
         break;
 }
 
-/*$object->xpdo->setLogLevel($oldLogLevel);
-$object->xpdo->setLogTarget($oldLogTarget); */
+
 
 return $success;

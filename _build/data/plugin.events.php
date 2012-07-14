@@ -5,6 +5,7 @@
  * @package captcha
  * @subpackage build
  */
+/* @var $modx modX */
 $events = array();
 
 $events['OnBeforeManagerLogin']= $modx->newObject('modPluginEvent');
