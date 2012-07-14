@@ -150,16 +150,19 @@ class VeriWord {
      */
     function draw_text() {
 
-        /* dynamically load GD2 lib (dll() is deprecated, but it will only
+        /* dynamically load GD2 lib -- (dll() is deprecated, but it will only
         execute here under Windows)*/
-        if (!extension_loaded('gd')) {
+        
+        /* no longer necessary since validator checks this during install */
+
+        /*if (!extension_loaded('gd')) {
            if (strtoupper(substr(PHP_OS, 0,3) == 'WIN')) {
                 @dl('php_gd2.dll');
            }
            else {
                 @dl('gd2.so');
            }
-        }
+        }*/
 
         /* pick one font type randomly from font directory */
 
