@@ -40,7 +40,7 @@ switch ($modx->event->name) {
     case 'OnBeforeManagerLogin': /* register only for backend */
         $rt = true;
         $modx->lexicon->load('captcha:default');
-        if ($modx->getOption('captcha.enabled',null,true)) {
+        if ($modx->getOption('captcha.enabled',null,false)) {
             if (!isset ($_SESSION['veriword'])) {
                  $rt = '$_SESSION Variable not set';
 
@@ -60,7 +60,7 @@ switch ($modx->event->name) {
     case 'OnManagerLoginFormRender': /* register only for backend */
         $rt = '';
 
-        if ($modx->getOption('captcha.enabled',null,true)) {
+        if ($modx->getOption('captcha.enabled',null,false)) {
 
             $modx->lexicon->load('captcha:default');
 
