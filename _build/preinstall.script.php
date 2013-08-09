@@ -79,6 +79,21 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
         break;
 
     case xPDOTransport::ACTION_UNINSTALL:
+        /* Remove Captcha System Settings */
+
+        $settings = array(
+            'captcha.enabled',
+            'captcha.words',
+            'captcha.use_mathstring',
+            'captcha.height',
+            'captcha.width'
+        );
+        foreach ($settings as $setting) {
+            $ss = $object->xpdo->getObject('modSystemSetting', array('key' => $setting));
+            if ($ss) {
+                $ss->remove();
+            }
+        }
         $success = true;
         break;
 }
