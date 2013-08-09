@@ -62,7 +62,7 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget('ECHO');
 
 $name = 'captcha';
-$version = '3.3.0';
+$version = '3.3.1';
 $release = 'pl';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
@@ -104,7 +104,7 @@ $attributes= array(
     xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array (
        'PluginEvents' => array(
            xPDOTransport::PRESERVE_KEYS => true,
-           xPDOTransport::UPDATE_OBJECT => false,
+           xPDOTransport::UPDATE_OBJECT => true,
            xPDOTransport::UNIQUE_KEY => array('pluginid','event'),
        ),
     ),

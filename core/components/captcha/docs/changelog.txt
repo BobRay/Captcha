@@ -1,11 +1,18 @@
 Changelog for Captcha.
 
+Captcha 3.3.1-pl
+----------------
+ - More reliable uninstall
+ - Added NL translation
+ - Fix bug with plugin remaining in cache after uninstall
+ - Remove Captcha System Settings on uninstall
+
 Captcha 3.3.0-pl
 ----------------
-Fixed bug with session var not being written
-(fixes intermittent Captcha failure - Thanks to Garry Nutting!)
-Added German Lexicon files
-Minor bug fixes
+ - Fixed bug with session var not being written
+    (fixes intermittent Captcha failure - Thanks to Garry Nutting!)
+ - Added German Lexicon files
+ - Minor bug fixes
 
 Captcha 3.2.5
 -------------
