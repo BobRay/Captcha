@@ -2,6 +2,10 @@ Changelog for Captcha.
 
 Captcha 3.3.1-pl
 ----------------
+Update for MODX 2.3
+
+Captcha 3.3.1-pl
+----------------
  - More reliable uninstall
  - Added NL translation
  - Fix bug with plugin remaining in cache after uninstall
