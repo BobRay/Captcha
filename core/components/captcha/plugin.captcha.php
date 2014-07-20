@@ -86,3 +86,5 @@ switch ($modx->event->name) {
         $modx->event->_output = $rt;
         break;
 }
+
+return '';
