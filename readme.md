@@ -1,14 +1,15 @@
-Captcha Plugin for MODx Revolution
+Captcha Plugin for MODX Revolution
 =======================================
 
-**Revolution Author:** Bob Ray [Bob's Guides](http://bobsguides.com)
+**Revolution Author:** Bob Ray [Bob's Guides](https://bobsguides.com)
+<br>
 **Revolution Editor:** Shaun McCormick
-**Date:**   01/10/2011
 
-**Documentation:** See comments in files at:
-core/components/captcha/
+**Documentation:** [Captcha Docs](https://bobsguides.com/captcha-plugin.html)
 
-**Bugs and Requests:** [GitHub](https://github.com/BobRay/Captcha/issues)
+**Bugs and requests:** [Captcha Issues](https://github.com/BobRay/Captcha/issues)
 
-A plugin for MODx Revolution showing either a string or a simple math equation
+**Questions about using Captcha** [MODX Forums](https://forums.modx.com)
+
+A plugin for MODX Revolution showing either a string or a simple math equation
 to verify that the user is a human.

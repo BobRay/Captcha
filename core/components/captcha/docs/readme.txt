@@ -5,7 +5,7 @@ Date:   08/10/2008
 Updated:10/03/2010
 ====================
 
-This utility provides captcha verification in the MODx
+This utility provides captcha verification in the MODX
 Manager login and elsewhere.
 
 It uses the following System Settings:

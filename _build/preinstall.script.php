@@ -2,8 +2,8 @@
 /**
  * Captcha pre-install script
  *
- * Copyright 2011 Bob Ray
- * @author Bob Ray <http://bobsguides.com>
+ * Copyright 2011-2017 Bob Ray
+ * @author Bob Ray <https://bobsguides.com>
  * 1/17/11
  *
  * Captcha is free software; you can redistribute it and/or modify it

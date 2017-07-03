@@ -2,7 +2,7 @@
 /**
  * Captcha plugin
  *
- * Copyright 2011 Bob Ray
+ * Copyright 2011-2017 Bob Ray
  *
  * @author Bob Ray
  * @editor Shaun McCormick <shaun@collabpad.com>
@@ -26,9 +26,9 @@
  */
 
 /**
- * MODx Captcha plugin
+ * MODX Captcha plugin
  *
- * Description: Captcha plugin for MODx login verification
+ * Description: Captcha plugin for MODX login verification
  * Events: OnBeforeManagerLogin, OnManagerLoginFormRender
  *
  * @package captcha
@@ -38,18 +38,25 @@
 /* @var $modx modX */
 switch ($modx->event->name) {
     case 'OnBeforeManagerLogin': /* register only for backend */
-        $rt = true;
+        $version = $modx->getOption('settings_version');
+
+        $v = version_compare($version, '2.4.0-pl');
+        if  ($v < 0) {
+            $rt = array(true);
+        } else {
+            $rt = array(false);
+        }
         $modx->lexicon->load('captcha:default');
         if ($modx->getOption('captcha.enabled',null,false)) {
             if (!isset ($_SESSION['veriword'])) {
-                 $rt = '$_SESSION Variable not set';
+                 $rt = array('$_SESSION Variable not set');
 
             }  else if ($_SESSION['veriword'] != $_POST['captcha_code']) {
                 /*$rt = "Debug: No Match: SESSION:".$_SESSION['veriword']." captcha_code:".$_POST['captcha_code']; */
                 if ($modx->getOption('captcha.use_mathstring',null,true)) {
-                    $rt=$modx->lexicon('login_mathstring_error');
+                    $rt= array($modx->lexicon('login_mathstring_error'));
                 } else {
-                    $rt=$modx->lexicon('login_captcha_error');
+                    $rt = array($modx->lexicon('login_captcha_error'));
                 }
             }
         }

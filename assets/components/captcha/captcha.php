@@ -2,7 +2,7 @@
 /**
  * Captcha
  *
- * Copyright 2011,2012 Bob Ray
+ * Copyright 2011-2017 Bob Ray
  *
  * @author Bob Ray
  * @editor Shaun McCormick <shaun@collabpad.com>
@@ -25,7 +25,7 @@
  * @package captcha
  */
 /**
- * MODx Captcha code - produces Captcha image
+ * MODX Captcha code - produces Captcha image
  *
  * Description Presents Captcha-style image for login verification
   *

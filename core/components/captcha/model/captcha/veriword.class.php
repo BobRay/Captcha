@@ -29,9 +29,9 @@
  * you can search and put free font you like
  *
  *
- * modified for use within MODx CMF, 17/02/08
+ * modified for use within MODX CMF, 17/02/08
  *
- * modified for MODx Revolution, Bob Ray 08/10/08
+ * modified for MODX Revolution, Bob Ray 08/10/08
  */
 
 
@@ -131,7 +131,7 @@ class VeriWord {
     function pick_word() {
         /* set default words */
 
-        $words="MODx,Access,Better,BitCode,Chunk,Cache,Desc,Design,Excell,Enjoy,URLs,TechView,Gerald,Griff,Humphrey,Holiday,Intel,Integration,Joystick,Join(),Oscope,Genetic,Light,Likeness,Marit,Maaike,Niche,Netherlands,Ordinance,Oscillo,Parser,Phusion,Query,Question,Regalia,Righteous,Snippet,Sentinel,Template,Thespian,Unity,Enterprise,Verily,Veri,Website,WideWeb,Yap,Yellow,Zebra,Zygote";
+        $words="MODX,Access,Better,BitCode,Chunk,Cache,Desc,Design,Excell,Enjoy,URLs,TechView,Gerald,Griff,Humphrey,Holiday,Intel,Integration,Joystick,Join(),Oscope,Genetic,Light,Likeness,Marit,Maaike,Niche,Netherlands,Ordinance,Oscillo,Parser,Phusion,Query,Question,Regalia,Righteous,Snippet,Sentinel,Template,Thespian,Unity,Enterprise,Verily,Veri,Website,WideWeb,Yap,Yellow,Zebra,Zygote";
         /* get words from database */
         $wordSettings = $this->modx->getObject('modSystemSetting',array('key' => 'captcha.words'));
 
