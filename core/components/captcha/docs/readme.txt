@@ -1,6 +1,7 @@
 Modx Captcha Utility
 ====================
 Author: BobRay <bobray@softville.com>
+Copyright 2008-2017 Bob Ray
 Date:   08/10/2008
 Updated:10/03/2010
 ====================
