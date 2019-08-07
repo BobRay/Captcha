@@ -1,5 +1,10 @@
 Changelog for Captcha.
 
+Captcha 3.3.2-pl
+----------------
+Documentation corrections
+Update Copyrights
+
 Captcha 3.3.1-pl
 ----------------
 Update for MODX 2.3
