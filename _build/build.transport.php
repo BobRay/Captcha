@@ -78,7 +78,7 @@ $builder->registerNamespace($name,false,true,'{core_path}components/' . $name. '
 $c= $modx->newObject('modPlugin');
 $c->set('id',1);
 $c->set('name', 'Captcha');
-$c->set('description', '<b>3.3.3-pl</b> CAPTCHA Plugin');
+$c->set('description', '<b>3.3.3captcha-pl</b> CAPTCHA Plugin');
 $c->set('category', 0);
 $c->set('plugincode', file_get_contents($sources['source_core'] . '/plugin.captcha.php'));
 
