@@ -62,7 +62,7 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget('ECHO');
 
 $name = 'captcha';
-$version = '3.3.4';
+$version = '3.3.5';
 $release = 'pl';
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
@@ -78,23 +78,23 @@ $builder->registerNamespace($name,false,true,'{core_path}components/' . $name. '
 $c= $modx->newObject('modPlugin');
 $c->set('id',1);
 $c->set('name', 'Captcha');
-$c->set('description', '<b>3.3.4captcha-pl</b> CAPTCHA Plugin');
+$c->set('description', 'CAPTCHA Plugin');
 $c->set('category', 0);
 $c->set('plugincode', file_get_contents($sources['source_core'] . '/plugin.captcha.php'));
 
 /* create a transport vehicle for the data object */
 
 /* add plugin events */
-$modx->log(xPDO::LOG_LEVEL_INFO,'Packaging in Plugin Events...'); flush();
+$modx->log(xPDO::LOG_LEVEL_INFO,'Packaging in Plugin Events...'); 
 $events = include $sources['data'].'plugin.events.php';
 if (is_array($events) && !empty($events)) {
 $c->addMany($events);
 } else {
 $modx->log(xPDO::LOG_LEVEL_ERROR,'Could not find plugin events!');
 }
-$modx->log(xPDO::LOG_LEVEL_INFO,'Plugin Events Packaged...'); flush();
+$modx->log(xPDO::LOG_LEVEL_INFO,'Plugin Events Packaged...'); 
 
-$modx->log(xPDO::LOG_LEVEL_INFO,'Setting Package Attributes...'); flush();
+$modx->log(xPDO::LOG_LEVEL_INFO,'Setting Package Attributes...'); 
 $attributes= array(
     xPDOTransport::ABORT_INSTALL_ON_VEHICLE_FAIL => true,
     xPDOTransport::UNIQUE_KEY => 'name',
@@ -109,8 +109,8 @@ $attributes= array(
        ),
     ),
 );
-$modx->log(xPDO::LOG_LEVEL_INFO,'Package Attributes Set...'); flush();
-$modx->log(xPDO::LOG_LEVEL_INFO,'Creating Vehicle...'); flush();
+$modx->log(xPDO::LOG_LEVEL_INFO,'Package Attributes Set...'); 
+$modx->log(xPDO::LOG_LEVEL_INFO,'Creating Vehicle...'); 
 $vehicle = $builder->createVehicle($c, $attributes);
 
 $vehicle->validate('php',array(
@@ -128,7 +128,7 @@ $vehicle->resolve('file',array(
 ));
 
 $builder->putVehicle($vehicle);
-$modx->log(xPDO::LOG_LEVEL_INFO,'Vehicle Packaged...'); flush();
+$modx->log(xPDO::LOG_LEVEL_INFO,'Vehicle Packaged...'); 
 
 /* add system settings */
 $settings = array();
